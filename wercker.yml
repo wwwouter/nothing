@@ -11,6 +11,8 @@ build:
     - script:
         code: echo jaja
     - script:
+        code: echo jaja2
+    - script:
         name: FAIL
         code: failuh
     - script:
