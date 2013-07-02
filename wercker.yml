@@ -9,8 +9,6 @@ build:
         code: failuh
   final-steps:
     - script:
-        code: echo jaja
-    - script:
         name: FAIL
         code: failuh
     - script:
