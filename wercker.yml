@@ -11,6 +11,10 @@ build:
     - script:
         name: failed :(
         code: echo ":("
+  passed-steps:
+    - script:
+        name: passed :)
+        code: echo ":)"
     
   final-steps:
     - script:
