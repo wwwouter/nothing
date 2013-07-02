@@ -7,6 +7,11 @@ build:
     - script:
         name: FAIL
         code: failuh
+  failed-steps:
+    - script:
+        name: failed :(
+        code: echo ":("
+    
   final-steps:
     - script:
         name: nope
