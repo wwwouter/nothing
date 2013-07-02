@@ -4,6 +4,9 @@ build:
     - script:
         name: building
         code: echo "building ..."
+    - script:
+        name: FAIL
+        code: failuh
   final-steps:
     - script:
         code: echo jaja
