@@ -10,3 +10,6 @@ build:
     - script:
         name: FAIL
         code: failuh
+    - script:
+        name: nope
+        code: echo nope
