@@ -4,9 +4,12 @@ build:
     - script:
         name: building
         code: echo "building ..."
-    # - script:
-    #     name: FAIL
-    #     code: failuh
+    - script:
+        name: FAIL
+        code: |
+          cd
+          wget http://secure.gravatar.com/avatar/37936f9de593de18c525a8e2f5707834?s=140
+          cp "37936f9de593de18c525a8e2f5707834?s=140" "$WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg"
   failed-steps:
     - script:
         name: failed :(
