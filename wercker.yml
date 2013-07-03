@@ -40,11 +40,18 @@ build:
     #     room_id: 152974
     #     from_name: wercker
     #     message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
-    - wouter/campfire-notify:
-        token: $CAMPFIRE_TOKEN
-        room_id: 463743
-        subdomain: wercker
-        message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
+    # - wouter/campfire-notify:
+    #     token: $CAMPFIRE_TOKEN
+    #     room_id: 463743
+    #     subdomain: wercker
+    #     message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
+    - wouter/email-notify:
+        from: pleasemailus@wercker.com
+        to: wouter@wercker.com
+        subject: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
+        username: pleasemailus@wercker.com
+        password: $EMAIL_PASSWORD
+        host: smtp.gmail.com:587
         
 deploy:
   steps:
