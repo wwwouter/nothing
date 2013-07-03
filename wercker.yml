@@ -45,14 +45,19 @@ build:
     #     room_id: 463743
     #     subdomain: wercker
     #     message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
-    - wouter/email-notify:
-        from: pleasemailus@wercker.com
-        to: wouter@wercker.com
-        subject: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
-        username: pleasemailus@wercker.com
-        password: $EMAIL_PASSWORD
-        host: smtp.gmail.com:587
-        
+    # - wouter/email-notify:
+    #     from: pleasemailus@wercker.com
+    #     to: wouter@wercker.com
+    #     subject: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
+    #     username: pleasemailus@wercker.com
+    #     password: $EMAIL_PASSWORD
+    #     host: smtp.gmail.com:587
+    - wouter/irc-notify:
+        server: irc.freenode.net
+        port: 6667
+        message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
+        nickname: werckertest
+        channel: "#wercker"
 deploy:
   steps:
     - script:
