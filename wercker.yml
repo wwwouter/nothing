@@ -35,10 +35,15 @@ build:
     # - script:
     #     name: nope
     #     code: echo nope
-    - wouter/hipchat-notify:
-        token: $HIPCHAT_TOKEN
-        room_id: 152974
-        from_name: wercker
+    # - wouter/hipchat-notify:
+    #     token: $HIPCHAT_TOKEN
+    #     room_id: 152974
+    #     from_name: wercker
+    #     message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
+    - wouter/campfire-notify:
+        token: $CAMPFIRE_TOKEN
+        room_id: 463743
+        subdomain: wercker
         message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
         
 deploy:
