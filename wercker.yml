@@ -35,3 +35,16 @@ build:
     - script:
         name: nope
         code: echo nope
+deploy:
+  steps:
+    - heroku-deploy
+  passed-steps:
+    - script:
+        name: passed :)
+        code: echo ":)"
+    - script:
+        name: image
+        code: |
+          cd
+          wget http://secure.gravatar.com/avatar/37936f9de593de18c525a8e2f5707834?s=140
+          cp "37936f9de593de18c525a8e2f5707834?s=140" "$WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg"
