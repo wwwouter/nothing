@@ -37,7 +37,7 @@ build:
     #     code: echo nope
     - wouter/hipchat-notify:
         token: $HIPCHAT_TOKEN
-        room_id: 1529740
+        room_id: 152974
         from_name: wercker
         message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
         
