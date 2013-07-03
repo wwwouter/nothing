@@ -35,6 +35,7 @@ build:
     - script:
         name: nope
         code: echo nope
+    - wouter/hipchat-notify
 deploy:
   steps:
     - script:
