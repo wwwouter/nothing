@@ -37,7 +37,9 @@ build:
         code: echo nope
 deploy:
   steps:
-    - heroku-deploy
+    - script:
+        name: deploy
+        code: echo "deploying"
   passed-steps:
     - script:
         name: passed :)
