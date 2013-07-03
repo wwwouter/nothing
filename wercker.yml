@@ -35,7 +35,7 @@ build:
     - script:
         name: nope
         code: echo nope
-    - wouter/hipchat-notify
+    - wouter/hipchat-notify:
         token: $HIPCHAT_TOKEN
         room_id: 1529740
         from_name: wercker
