@@ -71,7 +71,7 @@ deploy:
         username: $LOGGLY_USERNAME
         password: $LOGGLY_PASSWORD
         subdomain: wercker
-        query: json.level:error
+        query: json.level:debug
         from: NOW-10MINUTES
         
     # - script:
