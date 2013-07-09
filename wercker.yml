@@ -10,6 +10,7 @@ build:
           cd
           wget http://secure.gravatar.com/avatar/37936f9de593de18c525a8e2f5707834?s=140
           cp "37936f9de593de18c525a8e2f5707834?s=140" "$WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg"
+        
   failed-steps:
     - script:
         name: failed :(
@@ -67,12 +68,24 @@ deploy:
     - script:
         name: passed :)
         code: echo ":)"
-    - wouter/loggly-check:
-        username: $LOGGLY_USERNAME
-        password: $LOGGLY_PASSWORD
-        subdomain: wercker
-        query: json.level:debug
-        from: NOW-10MINUTES
+    - script:
+        name: post deploy warm up sleep
+        code: sleep 60
+    - script:
+        name: post deploy run sleep
+        code: sleep 60
+    - wwwouter/graphite-check:
+        pre-deploy-period: 300
+        post-deploy-warm-up: 60
+        url: $GRAPHITE_URL
+        target: *.*.*
+        diff-threshold: 0
+    # - wouter/loggly-check:
+    #     username: $LOGGLY_USERNAME
+    #     password: $LOGGLY_PASSWORD
+    #     subdomain: wercker
+    #     query: json.level:debug
+    #     from: NOW-10MINUTES
         
     # - script:
     #     name: image
