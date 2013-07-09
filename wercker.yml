@@ -78,7 +78,7 @@ deploy:
         pre-deploy-period: 300
         post-deploy-warm-up: 60
         url: $GRAPHITE_URL
-        target: *.*.*
+        target: "*.*.*"
         diff-threshold: 0
     # - wouter/loggly-check:
     #     username: $LOGGLY_USERNAME
