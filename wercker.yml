@@ -70,13 +70,13 @@ deploy:
         code: echo ":)"
     - script:
         name: post deploy warm up sleep
-        code: sleep 60
+        code: sleep 5
     - script:
         name: post deploy run sleep
-        code: sleep 60
+        code: sleep 5
     - wouter/graphite-check:
         pre-deploy-period: 300
-        post-deploy-warmup: 60
+        post-deploy-warmup: 5
         url: $GRAPHITE_URL
         target: "*.*.*"
         diff-threshold: 0
