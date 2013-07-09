@@ -76,7 +76,7 @@ deploy:
         code: sleep 60
     - wouter/graphite-check:
         pre-deploy-period: 300
-        post-deploy-warm-up: 60
+        post-deploy-warmup: 60
         url: $GRAPHITE_URL
         target: "*.*.*"
         diff-threshold: 0
