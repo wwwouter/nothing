@@ -74,7 +74,7 @@ deploy:
     - script:
         name: post deploy run sleep
         code: sleep 60
-    - wwwouter/graphite-check:
+    - wouter/graphite-check:
         pre-deploy-period: 300
         post-deploy-warm-up: 60
         url: $GRAPHITE_URL
