@@ -11,6 +11,13 @@ build:
           return 1
           wget http://secure.gravatar.com/avatar/37936f9de593de18c525a8e2f5707834?s=140
           cp "37936f9de593de18c525a8e2f5707834?s=140" "$WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg"
+    - script:
+        name: building1
+        code: echo "building 1..."
+        run-always: true
+    - script:
+        name: building2
+        code: echo "2 ..."
         
   failed-steps:
     - script:
