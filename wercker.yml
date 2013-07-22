@@ -9,7 +9,6 @@ build:
         code: |
           echo '<h1>jaja</h1>' > "$WERCKER_STEP_TEMP/file"
           echo '<h1>jaja</h1>' > "$WERCKER_REPORT_MESSAGE_FILE"
-          return 1
           wget http://secure.gravatar.com/avatar/37936f9de593de18c525a8e2f5707834?s=140
           cp "37936f9de593de18c525a8e2f5707834?s=140" "$WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg"
     - script:
@@ -35,7 +34,7 @@ build:
           wget http://secure.gravatar.com/avatar/37936f9de593de18c525a8e2f5707834?s=140
           cp "37936f9de593de18c525a8e2f5707834?s=140" "$WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg"
     
-  final-steps:
+  # final-steps:
     # - script:
     #     name: nope
     #     code: echo nope
@@ -73,22 +72,31 @@ deploy:
     - script:
         name: deploy
         code: echo "deploying"
-  passed-steps:
-    - script:
-        name: passed :)
-        code: echo ":)"
     - script:
         name: post deploy warm up sleep
         code: sleep 60
     - script:
-        name: post deploy run sleep
+        name: deploy
+        code: echo "deploying 1"
+    - script:
+        name: post deploy warm up sleep
         code: sleep 60
-    - wouter/graphite-check:
-        pre-deploy-period: 300
-        post-deploy-warmup: 60
-        url: $GRAPHITE_URL
-        target: "*.*.*"
-        diff-threshold: 0
+  # passed-steps:
+  #   - script:
+  #       name: passed :)
+  #       code: echo ":)"
+  #   - script:
+  #       name: post deploy warm up sleep
+  #       code: sleep 60
+  #   - script:
+  #       name: post deploy run sleep
+  #       code: sleep 60
+  #   - wouter/graphite-check:
+  #       pre-deploy-period: 300
+  #       post-deploy-warmup: 60
+  #       url: $GRAPHITE_URL
+  #       target: "*.*.*"
+  #       diff-threshold: 0
     # - wouter/loggly-check:
     #     username: $LOGGLY_USERNAME
     #     password: $LOGGLY_PASSWORD
