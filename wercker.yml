@@ -3,7 +3,9 @@ build:
   steps:
     - script:
         name: building
-        code: echo "building ..."
+        code: |
+          echo "building ..."
+          wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
     # - script:
     #     name: FAIL
     #     code: |
@@ -19,23 +21,23 @@ build:
     #     name: building2
     #     code: echo "2 ..."
         
-  failed-steps:
-    - script:
-        name: failed :(
-        code: echo ":("
-  passed-steps:
-    - script:
-        name: passed :)
-        code: echo ":)"
-    - script:
-        name: image
-        code: |
-          cd
-          wget http://secure.gravatar.com/avatar/37936f9de593de18c525a8e2f5707834?s=140
-          cp "37936f9de593de18c525a8e2f5707834?s=140" "$WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg"
+  # failed-steps:
+  #   - script:
+  #       name: failed :(
+  #       code: echo ":("
+  # passed-steps:
+  #   - script:
+  #       name: passed :)
+  #       code: echo ":)"
+  #   - script:
+  #       name: image
+  #       code: |
+  #         cd
+  #         wget http://secure.gravatar.com/avatar/37936f9de593de18c525a8e2f5707834?s=140
+  #         cp "37936f9de593de18c525a8e2f5707834?s=140" "$WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg"
     
-  final-steps:
-    # - script:
+  # final-steps:
+  #   # - script:
     #     name: nope
     #     code: echo nope
     # - script:
@@ -67,28 +69,28 @@ build:
     #     message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
     #     nickname: werckertest
     #     channel: "#wercker"
-deploy:
-  steps:
-    - script:
-        name: deploy
-        code: echo "deploying"
-    - script:
-        name: post deploy warm up sleep
-        code: |
-          echo 1
-          sleep 5
-          echo 2
-          sleep 5
-          echo 3
-          sleep 60
-          echo 4
-          sleep 30
-    - script:
-        name: deploy
-        code: echo "deploying 1"
-    - script:
-        name: post deploy warm up sleep
-        code: sleep 60
+# deploy:
+#   steps:
+#     - script:
+#         name: deploy
+#         code: echo "deploying"
+#     - script:
+#         name: post deploy warm up sleep
+#         code: |
+#           echo 1
+#           sleep 5
+#           echo 2
+#           sleep 5
+#           echo 3
+#           sleep 60
+#           echo 4
+#           sleep 30
+#     - script:
+#         name: deploy
+#         code: echo "deploying 1"
+#     - script:
+#         name: post deploy warm up sleep
+#         code: sleep 60
   # passed-steps:
   #   - script:
   #       name: passed :)
