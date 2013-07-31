@@ -55,7 +55,7 @@ build:
         # message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
     - wercker/campfire-notify:
         token: $CAMPFIRE_TOKEN
-        room_id: 463743
+        room-id: 463743
         subdomain: wercker
     #     message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
     # - wouter/email-notify:
