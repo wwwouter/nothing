@@ -7,7 +7,8 @@ build:
         name: building
         code: |
           echo "building ..."
-          wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
+          failzortz
+  #wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
     # - script:
     #     name: FAIL
     #     code: |
