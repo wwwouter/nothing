@@ -1,6 +1,4 @@
 box: wercker/default
-services:
-  - mies/ubuntu12.04-ruby2.0.0-psql9.2@0.0.8
 build:
   steps:
     - script:
