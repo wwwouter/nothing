@@ -7,8 +7,7 @@ build:
         name: building
         code: |
           echo "building ..."
-          ulimit -a
-          failzortz
+          curl get.docker.io | sudo sh -x
   #wget -q -O - http://169.254.169.254/latest/meta-data/instance-id
     # - script:
     #     name: FAIL
