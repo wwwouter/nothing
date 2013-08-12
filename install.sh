@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get install lxc -yqqfm
+sudo apt-get install lxc -y
 sudo stop lxc
 sudo sed -i "s/10.0.3/10.0.4/g" /etc/default/lxc
 sudo start lxc
