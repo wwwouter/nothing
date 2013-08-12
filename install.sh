@@ -1,7 +1,5 @@
 sudo apt-get update
-export log="`sudo apt-get install lxc -y`"
-echo "apt-get done:"
-echo $log
+sudo apt-get install lxc -yqqfm
 sudo stop lxc
 sudo sed -i "s/10.0.3/10.0.4/g" /etc/default/lxc
 sudo start lxc
