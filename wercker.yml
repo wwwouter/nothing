@@ -5,7 +5,8 @@ build:
         name: building
         code: |
           echo "building ..."
-          source install.sh
+          docker run ubuntu /bin/echo hello world
+          
 
           
 #curl get.docker.io | sudo sh -x
