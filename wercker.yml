@@ -5,7 +5,7 @@ build:
         name: building
         code: |
           echo "building ..."
-          sudo docker run ubuntu /bin/echo hello world
+          faiilllliinnngggg
           
 
           
