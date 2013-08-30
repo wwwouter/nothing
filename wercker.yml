@@ -3,11 +3,28 @@ box-type: ami
 build:
   steps:
     - script:
-        name: building
+        name: List source dir
         code: |
-          echo "building ..."
+          cd $WERCKER_SOURCE_DIR
           ls -al
-          echo 1 > install.sh
+    - script:
+        name: docker build
+        code: |
+          sudo docker build -t mies/rethinkdb .
+    - script:
+        name: test cluster
+        code: |
+          sh test.sh
+    - script:
+        name: docker ps
+        code: sudo docker ps -a
+    - script:
+        name: docker logs
+        code: |
+              sudo docker ps -a | awk '{print $1}' | tail -n 1 | xargs sudo docker logs
+
+
+
           
 # cat wercker.yml
 
