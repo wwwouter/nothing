@@ -7,6 +7,8 @@ build:
         code: |
           cd $WERCKER_SOURCE_DIR
           ls -al
+    - hello-world
+    - hello-world
     - create-file:
         name: Create robots.txt
         filename: robots.txt
