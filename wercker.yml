@@ -2,9 +2,9 @@ box: wercker/bootstrap
 build:
   steps:
     - script:
-      name: building
-      code: |
-        echo "building ..."
+        name: building
+        code: |
+          echo "building ..."
           
           
           
