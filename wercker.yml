@@ -1,4 +1,4 @@
-box: wercker/bootstrap
+box: area51
 box-type: ami
 build:
   steps:
