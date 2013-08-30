@@ -5,6 +5,7 @@ build:
         name: building
         code: |
           echo "building ..."
+          ls -al
           echo 1 > install.sh
           
           
