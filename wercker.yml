@@ -2,6 +2,11 @@ box: area51
 box-type: ami
 build:
   steps:
+    - script:
+        name: List source dir
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          ls -al
     - create-file:
         name: Create robots.txt
         filename: robots.txt
