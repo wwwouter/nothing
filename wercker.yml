@@ -7,6 +7,10 @@ build:
         code: |
           cd $WERCKER_SOURCE_DIR
           ls -al
+    - script:
+        name: Say 1
+        code: |
+          echo 1
     - hello-world
     - hello-world
     - create-file:
