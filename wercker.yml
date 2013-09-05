@@ -1,4 +1,4 @@
-box: ami-fd511c94
+box: ami-7f97d816
 box-type: ami
 build:
   steps:
