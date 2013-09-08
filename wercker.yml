@@ -1,5 +1,6 @@
-box: ami-fd511c94
+box: ami-9b753bf2
 box-type: ami
+ami-user: Administrator
 build:
   steps:
     - script:
@@ -7,39 +8,39 @@ build:
         code: |
           cd $WERCKER_SOURCE_DIR
           ls -al
-    - script:
-        name: Say 1
-        code: |
-          echo 1
-    - create-file:
-        name: Create robots.txt
-        filename: robots.txt
-        overwrite: true
-        content: |-
-            # Allow everything except drafts
-            User-agent: *
-            Allow: /
-            Disallow: /drafts/
-    - script:
-        name: List source dir
-        code: |
-          cd $WERCKER_SOURCE_DIR
-          ls -al
-    - script:
-        name: docker build
-        code: |
-          sudo docker build -t mies/rethinkdb .
-    - script:
-        name: test cluster
-        code: |
-          sh test.sh
-    - script:
-        name: docker ps
-        code: sudo docker ps -a
-    - script:
-        name: docker logs
-        code: |
-              sudo docker ps -a | awk '{print $1}' | tail -n 1 | xargs sudo docker logs
+    # - script:
+    #     name: Say 1
+    #     code: |
+    #       echo 1
+    # - create-file:
+    #     name: Create robots.txt
+    #     filename: robots.txt
+    #     overwrite: true
+    #     content: |-
+    #         # Allow everything except drafts
+    #         User-agent: *
+    #         Allow: /
+    #         Disallow: /drafts/
+    # - script:
+    #     name: List source dir
+    #     code: |
+    #       cd $WERCKER_SOURCE_DIR
+    #       ls -al
+    # - script:
+    #     name: docker build
+    #     code: |
+    #       sudo docker build -t mies/rethinkdb .
+    # - script:
+    #     name: test cluster
+    #     code: |
+    #       sh test.sh
+    # - script:
+    #     name: docker ps
+    #     code: sudo docker ps -a
+    # - script:
+    #     name: docker logs
+    #     code: |
+    #           sudo docker ps -a | awk '{print $1}' | tail -n 1 | xargs sudo docker logs
 
 
 
