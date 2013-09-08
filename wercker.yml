@@ -1,6 +1,6 @@
-box: ami-11703e78
+box: ami-fd511c94
 box-type: ami
-ami-user: Administrator
+# ami-user: Administrator
 build:
   steps:
     - script:
