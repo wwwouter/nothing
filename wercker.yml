@@ -1,5 +1,5 @@
-box: ami-fd511c94
-box-type: ami
+# box: ami-fd511c94
+# box-type: ami
 # ami-user: Administrator
 box: wercker/python
 build:
