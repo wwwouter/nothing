@@ -1,13 +1,20 @@
 box: ami-fd511c94
 box-type: ami
 # ami-user: Administrator
+box: wercker/python
 build:
   steps:
     - script:
         name: List source dir
         code: |
           cd $WERCKER_SOURCE_DIR
-          ls -al
+          lsssad -al
+  after-steps:
+    - wercker/hipchat-notify:
+        token: $HIPCHAT_TOKEN
+        room-id: 152974
+        from-name: wercker
+        on: failed
     # - script:
     #     name: Say 1
     #     code: |
