@@ -8,13 +8,13 @@ build:
         name: List source dir
         code: |
           cd $WERCKER_SOURCE_DIR
-          lsssad -al
-  after-steps:
-    - wercker/hipchat-notify:
-        token: $HIPCHAT_TOKEN
-        room-id: 152974
-        from-name: wercker
-        on: failed
+          ls -al
+  # after-steps:
+  #   - wercker/hipchat-notify:
+  #       token: $HIPCHAT_TOKEN
+  #       room-id: 152974
+  #       from-name: wercker
+  #       on: failed
     # - script:
     #     name: Say 1
     #     code: |
