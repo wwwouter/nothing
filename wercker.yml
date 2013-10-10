@@ -7,7 +7,7 @@ build:
     - script:
         name: List source dir
         code: |
-          setMessage jemoeder
+          setMessage "this is a message"
           export
           cd $WERCKER_SOURCE_DIR
           ls -al
