@@ -7,6 +7,7 @@ build:
     - script:
         name: List source dir
         code: |
+          fail jemoeder
           export
           cd $WERCKER_SOURCE_DIR
           ls -al
