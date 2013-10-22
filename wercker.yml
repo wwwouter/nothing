@@ -7,7 +7,7 @@ build:
     - script:
         name: List source dir
         code: |
-          touch $WERCKER_REPORT_ARTIFACTS_DIR/a
+          echo "text" > $WERCKER_REPORT_ARTIFACTS_DIR/a
           echo "aaa:1" > $WERCKER_REPORT_NUMBERS_FILE
           echo "mezzage" > $WERCKER_REPORT_MESSAGE_FILE
           
