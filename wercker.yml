@@ -8,6 +8,9 @@ build:
         name: List source dir
         code: |
           touch $WERCKER_REPORT_ARTIFACTS_DIR/a
+          echo "aaa:1" > $WERCKER_REPORT_NUMBERS_FILE
+          echo "mezzage" > $WERCKER_REPORT_MESSAGE_FILE
+          
 
 # echo $VAR
 # setMessage "this is a message"
