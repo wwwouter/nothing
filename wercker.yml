@@ -1,17 +1,19 @@
 # box: ami-fd511c94
 # box-type: ami
 # ami-user: Administrator
-box: wercker/python
+box: wercker/default
 build:
   steps:
     - script:
         name: List source dir
         code: |
-          echo $VAR
-          setMessage "this is a message"
-          export
-          cd $WERCKER_SOURCE_DIR
-          ls -al
+          touch $WERCKER_REPORT_ARTIFACTS_DIR\a
+
+# echo $VAR
+# setMessage "this is a message"
+# export
+# cd $WERCKER_SOURCE_DIR
+# ls -al
   # after-steps:
   #   - wercker/hipchat-notify:
   #       token: $HIPCHAT_TOKEN
