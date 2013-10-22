@@ -7,7 +7,7 @@ build:
     - script:
         name: List source dir
         code: |
-          touch $WERCKER_REPORT_ARTIFACTS_DIR\a
+          touch $WERCKER_REPORT_ARTIFACTS_DIR/a
 
 # echo $VAR
 # setMessage "this is a message"
