@@ -8,6 +8,7 @@ build:
     - script:
         name: List source dir
         code: |
+          ping nu.nl
           mkdir zzz
     - script:
         name: List source dir
