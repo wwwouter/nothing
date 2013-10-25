@@ -1,12 +1,17 @@
 # box: ami-fd511c94
 # box-type: ami
 # ami-user: Administrator
-#box: wercker/default
-box: wercker-labs/docker
+box: wercker/default
+# box: wercker-labs/docker
 build:
   steps:
     - script:
         name: List source dir
+        code: |
+          mkdir zzz
+    - script:
+        name: List source dir
+        cwd: zzz
         code: |
           echo "text" > $WERCKER_REPORT_ARTIFACTS_DIR/a
           echo "aaa:1" > $WERCKER_REPORT_NUMBERS_FILE
