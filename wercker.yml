@@ -8,7 +8,7 @@ build:
     - script:
         name: List source dir
         code: |
-          ping nu.nl
+          sleep 330
           mkdir zzz
     - script:
         name: List source dir
