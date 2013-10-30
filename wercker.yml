@@ -8,16 +8,15 @@ build:
     - script:
         name: List source dir
         code: |
-          sleep 330
           mkdir zzz
-    - script:
-        name: List source dir
-        cwd: zzz
-        code: |
-          echo "text" > $WERCKER_REPORT_ARTIFACTS_DIR/a
-          echo "aaa:1" > $WERCKER_REPORT_NUMBERS_FILE
-          echo "mezzage" > $WERCKER_REPORT_MESSAGE_FILE
-          wget http://media.packetlife.net/media/armory/screenshots/wget-110.jpg -O $WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg
+    # - script:
+    #     name: List source dir
+    #     cwd: zzz
+    #     code: |
+    #       echo "text" > $WERCKER_REPORT_ARTIFACTS_DIR/a
+    #       echo "aaa:1" > $WERCKER_REPORT_NUMBERS_FILE
+    #       echo "mezzage" > $WERCKER_REPORT_MESSAGE_FILE
+    #       wget http://media.packetlife.net/media/armory/screenshots/wget-110.jpg -O $WERCKER_REPORT_DIR/$WERCKER_STEP_ID/image.jpg
           
 
 # echo $VAR
@@ -137,11 +136,11 @@ build:
     #     message: $WERCKER_APPLICATION_OWNER_NAME/$WERCKER_APPLICATION_NAME build by $WERCKER_STARTED_BY finished
     #     nickname: werckertest
     #     channel: "#wercker"
-# deploy:
-#   steps:
-#     - script:
-#         name: deploy
-#         code: echo "deploying"
+deploy:
+  steps:
+    - script:
+        name: deploy
+        code: echo "deploying"
 #     - script:
 #         name: post deploy warm up sleep
 #         code: |
