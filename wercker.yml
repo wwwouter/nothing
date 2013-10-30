@@ -137,6 +137,7 @@ build:
     #     nickname: werckertest
     #     channel: "#wercker"
 deploy:
+  steps
   asdfdsaf:
     - script:
         name: deployz
