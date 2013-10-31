@@ -6,9 +6,13 @@ box: wercker/default
 build:
   steps:
     - script:
-        name: List source dir
+        name: Copy 
         code: |
-          mkdir zzz
+          mkdir $WERCKER_REPORT_ARTIFACTS_DIR/report
+          cat a.xml > $WERCKER_REPORT_ARTIFACTS_DIR/report/a.xml
+          cat b.xml > $WERCKER_REPORT_ARTIFACTS_DIR/report/b.xml
+        reportFilename : report
+        reportType: junit
     # - script:
     #     name: List source dir
     #     cwd: zzz
