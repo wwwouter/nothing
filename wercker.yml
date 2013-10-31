@@ -9,9 +9,9 @@ build:
         name: Copy 
         code: |
           mkdir $WERCKER_REPORT_ARTIFACTS_DIR/report
-          cat a.xml > $WERCKER_REPORT_ARTIFACTS_DIR/report/a.xml
-          cat b.xml > $WERCKER_REPORT_ARTIFACTS_DIR/report/b.xml
-        reportFilename : report
+          cat a.xml > $WERCKER_REPORT_ARTIFACTS_DIR/a.xml
+          cat b.xml > $WERCKER_REPORT_ARTIFACTS_DIR/b.xml
+        reportFilename : /
         reportType: junit
     # - script:
     #     name: List source dir
