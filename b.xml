@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+<testsuite name="bmA" errors="0" tests="5" failures="1" time="0.019" timestamp="2013-10-31T11:29:01">
+  <testcase classname="bmA" name="should not escape string without double quote backslash or newline" time="0.001"><failure>1: Expected &apos;abc12&apos; to equal &apos;abc1z2&apos;.</failure></testcase>
+  <testcase classname="bmA" name="should escape string with backslash" time="0"></testcase>
+  <testcase classname="bmA" name="should escape string with double quote " time="0.001"></testcase>
+  <testcase classname="bmA" name="should escape string with newline" time="0"></testcase>
+  <testcase classname="bmA" name="should escape string with double quote backslash and newline" time="0"></testcase>
+</testsuite>
+</testsuites>(
