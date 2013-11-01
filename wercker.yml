@@ -1,8 +1,10 @@
 # box: ami-fd511c94
 # box-type: ami
 # ami-user: Administrator
-box: wercker/default
-# box: wercker-labs/docker
+#box: wercker/default
+box: wercker-labs/docker
+services:
+  - wercker/mongodb
 build:
   steps:
     - script:
