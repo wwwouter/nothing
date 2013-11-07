@@ -3,7 +3,7 @@
 # ami-user: Administrator
 #box: wercker/default
 box: wercker-labs/docker
-services:
+servicess:
   - wercker/mongodb
 build:
   steps:
