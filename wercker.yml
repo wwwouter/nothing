@@ -1,15 +1,17 @@
 # box: ami-fd511c94
 # box-type: ami
 # ami-user: Administrator
-#box: wercker/default
-box: wercker-labs/docker
-servicess:
-  - wercker/mongodb
+box: wercker/default
+# box: wercker-labs/docker
+# servicess:
+#   - wercker/mongodb
+no-response-timeout: 1
 build:
   steps:
     - script:
         name: Copy 
         code: |
+          sleep 2
           mkdir $WERCKER_REPORT_ARTIFACTS_DIR/report
           cat a.xml > $WERCKER_REPORT_ARTIFACTS_DIR/a.xml
           cat b.xml > $WERCKER_REPORT_ARTIFACTS_DIR/b.xml
